@@ -1,5 +1,16 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  // 1 step
+  const seenNumbers = {};
+  for (const number of array) {
+    // n steps
+    const complement = target - number;
+    // n steps
+    if (seenNumbers[complement]) return true;
+    // n steps
+    seenNumbers[number] = true;
+  }
+  // 1 step
+  return false;
 }
 
 /* 
@@ -8,6 +19,14 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+if any pairs of numbers in the array adds up to the target, return true
+need to iterate through the array
+reduce the array to a single number(the target)
+if no combination of numbers in the array adds up to the target, return false
+
+I think I can do this with a for loop
+
+
 */
 
 /*
